@@ -1253,7 +1253,7 @@ body {
       color: #2e3949;
       padding-bottom: 15px; }
     .checkout-form p {
-      color: #a9a9a9;
+      color: #404040;
       font-size: 14px;
       font-weight: 300;
       letter-spacing: 0.14px;
@@ -1321,9 +1321,12 @@ body {
           font-size: 16px;
           font-weight: 500;
           line-height: 1.33;
-          color: #4e4e4e; }
+          color: #404040; }
         .checkout-form__services-item p {
-          padding-bottom: 0; }
+          padding-bottom: 0;
+          color: #565656;
+          line-height: 1.2;
+          letter-spacing: 0.14px; }
     .checkout-form input[type=text],
     .checkout-form input[type=email],
     .checkout-form input[type=password],
