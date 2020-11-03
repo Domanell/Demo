@@ -1289,6 +1289,9 @@ body {
     .checkout-form__guest {
       padding-bottom: 15px;
       display: none; }
+    .checkout-form__guest-section {
+      border-top: 1px solid #e2e2e2;
+      padding-top: 20px; }
     .checkout-form__add-guest {
       color: #7fb539;
       font-weight: 500;
