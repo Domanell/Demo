@@ -232,12 +232,12 @@ $(document).ready(function() {
 	});
 
 	// International Telephone Input
-	if(document.querySelector("#trial-phone")){
-		var input = document.querySelector("#trial-phone");
+	if (document.querySelector('[id$=trial-phone]')) {
+		var input = document.querySelector('[id$=trial-phone]');
 		window.intlTelInput(input, {
-			preferredCountries : ["us"],
-			separateDialCode : true
-			// any initialisation options go here
+		    preferredCountries: ['us'],
+		    separateDialCode: true
+		    // any initialisation options go here
 		});
 	}
 
@@ -255,7 +255,7 @@ $(document).ready(function() {
 		event.preventDefault();
 		//disable cart with opened menu
 		if (!$("nav.navigation").hasClass("active") && $(".pricing-summary").children().length > 0){  
-			$(".pricing-summary").fadeToggle( "fast");
+			$(".pricing-summary").addClass( "active");
 		}
 	});
 	
@@ -266,10 +266,10 @@ $(document).ready(function() {
 	$(window).resize(function(event) { 
 		let width = event.target.innerWidth;
 		if (width >= 1200 && $(".pricing-summary")) {
-			$(".pricing-summary").fadeIn( "fast");
+			$(".pricing-summary").addClass( "active");
 		} 
 		else if (width < 1200 && $(".pricing-summary")) {
-			$(".pricing-summary").fadeOut( "fast");
+			$(".pricing-summary").removeClass( "active");
 		}
 	});
 
@@ -300,15 +300,14 @@ $(window).scroll(function() {
 function setPricingContainer() {
 	if ($(".pricing-summary") && $(".pricing-summary").children().length == 0) {
 		$(".pricing-section_shrinker").addClass("no-cart");
-	//	$(".pricing-summary").fadeOut( "fast"); //close cart section when cart is empty
+		$(".pricing-summary").removeClass( "active"); //close cart section when cart is empty
 	} else if ($(".pricing-summary") && $(".pricing-summary").children().length > 0) {
 		$(".pricing-section_shrinker").removeClass("no-cart");
-	//	$(".pricing-summary").fadeIn( "fast"); //shows cart section when cart is empty
 	}
 }
 
 //close cart button on mobile
 function closeCartMobile() {
-	$(".pricing-summary").fadeOut( "fast");
+	$(".pricing-summary").removeClass( "active");
 }
 
