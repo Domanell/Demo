@@ -250,11 +250,11 @@ $(document).ready(function() {
 		}
 	});
 	
-	//pricing cart
+	//pricing cart mobile modal
 	$(".pricing-cart__button").on("click", function(event) {
 		event.preventDefault();
 		//disable cart with opened menu
-		if (!$("nav.navigation").hasClass("active")){  
+		if (!$("nav.navigation").hasClass("active") && $(".pricing-summary").children().length > 0){  
 			$(".pricing-summary").fadeToggle( "fast");
 		}
 	});
