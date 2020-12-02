@@ -258,15 +258,9 @@ $(document).ready(function() {
 			$(".pricing-summary").fadeToggle( "fast");
 		}
 	});
-	console.log("ready");
-		console.log($(".pricing-summary"));
-		console.log($(".pricing-summary__button-close .button-empty"));
-	$(".pricing-summary__button-close a").on("click", function(event) {
-		event.preventDefault();
-		
-		console.log($(this));
-		$(".pricing-summary").fadeOut( "fast");
-	});
+	
+	//close cart button event
+	$(".pricing-summary__button-close a").on("click", closeCartMobile);
 
 	$(window).resize(function(event) { 
 		let width = event.target.innerWidth;
@@ -279,7 +273,7 @@ $(document).ready(function() {
 	});
 
 	setPricingContainer();
-
+	
 	//pricing add to cart notification
 	$(".pricing-section .button").on("click", function(event) {
 		if ($(this).text() == "Add to cart") {
@@ -311,4 +305,8 @@ function setPricingContainer() {
 	}
 }
 
+//close cart button on mobile
+function closeCartMobile() {
+	$(".pricing-summary").fadeOut( "fast");
+}
 
