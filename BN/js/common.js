@@ -250,7 +250,7 @@ $(document).ready(function() {
 		}
 	});
 	
-	//pricing cart mobile modal
+	//pricing cart mobile screen
 	$(".pricing-cart__button").on("click", function(event) {
 		event.preventDefault();
 		//disable cart with opened menu
@@ -258,8 +258,13 @@ $(document).ready(function() {
 			$(".pricing-summary").fadeToggle( "fast");
 		}
 	});
+	console.log("ready");
+		console.log($(".pricing-summary"));
+		console.log($(".pricing-summary__button-close a"));
 	$(".pricing-summary__button-close a").on("click", function(event) {
 		event.preventDefault();
+		
+		console.log($(this));
 		$(".pricing-summary").fadeOut( "fast");
 	});
 
@@ -280,7 +285,7 @@ $(document).ready(function() {
 		if ($(this).text() == "Add to cart") {
 			event.preventDefault();
 			$(".pricing-notification").fadeIn( "slow");
-			$(".pricing-notification").delay(5000).fadeOut('slow');
+			$(".pricing-notification").delay(3000).fadeOut('slow');
 		}
 	});
 });
@@ -300,7 +305,7 @@ $(window).scroll(function() {
 function setPricingContainer() {
 	if ($(".pricing-summary") && $(".pricing-summary").children().length == 0) {
 		$(".pricing-section_shrinker").addClass("no-cart");
-		$(".pricing-summary").fadeOut( "fast");
+		$(".pricing-summary").fadeOut( "fast"); //close cart section when cart is empty
 	} else if ($(".pricing-summary") && $(".pricing-summary").children().length > 0) {
 		$(".pricing-section_shrinker").removeClass("no-cart");
 	}
