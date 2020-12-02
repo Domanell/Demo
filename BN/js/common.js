@@ -255,7 +255,7 @@ $(document).ready(function() {
 		event.preventDefault();
 		//disable cart with opened menu
 		if (!$("nav.navigation").hasClass("active") && $(".pricing-summary").children().length > 0){  
-			$(".pricing-summary").addClass( "active");
+			$(".pricing-summary").toggleClass( "active");
 		}
 	});
 	
