@@ -299,10 +299,10 @@ $(window).scroll(function() {
 function setPricingContainer() {
 	if ($(".pricing-summary") && $(".pricing-summary").children().length == 0) {
 		$(".pricing-section_shrinker").addClass("no-cart");
-		//$(".pricing-summary").fadeOut( "fast"); //close cart section when cart is empty
+		$(".pricing-summary").fadeOut( "fast"); //close cart section when cart is empty
 	} else if ($(".pricing-summary") && $(".pricing-summary").children().length > 0) {
 		$(".pricing-section_shrinker").removeClass("no-cart");
-		$(".pricing-summary").fadein( "fast"); //close cart section when cart is empty
+		$(".pricing-summary").fadeIn( "fast"); //close cart section when cart is empty
 	}
 }
 
