@@ -260,7 +260,7 @@ $(document).ready(function() {
 	});
 	console.log("ready");
 		console.log($(".pricing-summary"));
-		console.log($(".pricing-summary__button-close a"));
+		console.log($(".pricing-summary__button-close .button-empty"));
 	$(".pricing-summary__button-close a").on("click", function(event) {
 		event.preventDefault();
 		
