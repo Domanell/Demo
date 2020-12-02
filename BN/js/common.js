@@ -240,6 +240,7 @@ $(document).ready(function() {
 			// any initialisation options go here
 		});
 	}
+
 	// input number arrows
 	$('.input-number button').on('click',function(){
 		if($(this).hasClass('input-number__plus')){
@@ -250,7 +251,7 @@ $(document).ready(function() {
 	});
 	
 	//pricing cart
-	$("#pricing-cart").on("click", function(event) {
+	$(".pricing-cart__button").on("click", function(event) {
 		event.preventDefault();
 		//disable cart with opened menu
 		if (!$("nav.navigation").hasClass("active")){  
