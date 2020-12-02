@@ -300,6 +300,7 @@ $(window).scroll(function() {
 function setPricingContainer() {
 	if ($(".pricing-summary") && $(".pricing-summary").children().length == 0) {
 		$(".pricing-section_shrinker").addClass("no-cart");
+		$(".pricing-summary").fadeOut( "fast");
 	} else if ($(".pricing-summary") && $(".pricing-summary").children().length > 0) {
 		$(".pricing-section_shrinker").removeClass("no-cart");
 	}
