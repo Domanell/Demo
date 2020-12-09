@@ -118,12 +118,9 @@ $(document).ready(function() {
 		$(this).next().slideToggle( "fast");
 		$(this).toggleClass( "active");
 	  });
-	  $( ".pricing-section__accordion-trigger" ).click(function() {
-		$(this).prev().slideToggle( "fast");
-		$(this).toggleClass( "active");
-	  });
-	  $( ".pricing-section__pos-trigger" ).click(function() {
-		$(".pos-section").slideToggle( "fast");
+	  $( ".landing__faq-question" ).click(function() {
+		$(this).next().slideToggle( "fast")
+		$(this).parent().toggleClass( "active");
 	  });
 
 	//gallery
@@ -311,3 +308,15 @@ function closeCartMobile() {
 	$(".pricing-summary").removeClass( "active");
 }
 
+//accordion
+function pricingSectionAccordion() {
+	$( ".pricing-section__accordion-trigger" ).click(function() {
+		$(this).prev().slideToggle( "fast");
+		$(this).toggleClass( "active");
+	});
+}
+function pricingPosAccordion() {
+	$( ".pricing-section__pos-trigger" ).click(function() {
+		$(".pos-section").slideToggle( "fast");
+	});
+}
