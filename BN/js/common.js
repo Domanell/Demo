@@ -310,13 +310,9 @@ function closeCartMobile() {
 
 //accordion
 function pricingSectionAccordion() {
-	$( ".pricing-section__accordion-trigger" ).click(function() {
-		$(this).prev().slideToggle( "fast");
-		$(this).toggleClass( "active");
-	});
+	$(this).prev().slideToggle( "fast");
+	$(this).toggleClass( "active");
 }
 function pricingPosAccordion() {
-	$( ".pricing-section__pos-trigger" ).click(function() {
-		$(".pos-section").slideToggle( "fast");
-	});
+	$(".pos-section").slideToggle( "fast");
 }
