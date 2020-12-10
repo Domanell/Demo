@@ -309,6 +309,15 @@ function closeCartMobile() {
 }
 
 //accordion
+function pricingRefreshListener(){
+	$( ".pricing-section__accordion-trigger" ).click(function() {
+		$(this).prev().slideToggle( "fast");
+		$(this).toggleClass( "active");
+	  });
+	  $( ".pricing-section__pos-trigger" ).click(function() {
+		$(".pos-section").slideToggle( "fast");
+	  });
+}
 function pricingSectionAccordion() {
 	$(this).prev().slideToggle( "fast");
 	$(this).toggleClass( "active");
