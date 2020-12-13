@@ -1,0 +1,295 @@
+.main{
+overflow: visible;
+}
+/* slick slider */
+.slick-prev,
+.slick-next {
+	font-size: 0;
+	color: transparent;
+	line-height: 0;
+	cursor: pointer;
+}
+.slick-prev:before {
+	position: absolute;
+	top: calc(50% - 23px);
+	left: 0;
+	content: url(../img/arrow-left.png);
+}
+.slick-next:before {
+	position: absolute;
+	top: calc(50% - 23px);
+	right: 0;
+	content: url(../img/arrow-right.png);
+}
+/* header */
+.header {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	position: relative;
+	width: 100%;
+	background: transparent;
+	z-index: 1;
+	@include transition(all 0.5s);
+	&__box {
+		padding: 25px 25px;
+	}
+	.logo img {
+		display: block;
+	}
+
+	.navigation {
+		position: relative;
+		@include mq($max-width: 768px) {
+			font-size: 20px;
+			position: fixed;
+			top: 0;
+			right: 0;
+			width: 100% !important;
+			background: #fff;
+			z-index: 120;
+			display: block !important;
+			overflow: hidden;
+			height: 0px;
+			opacity: 0;
+			overflow-y: auto;
+			@include transition(all 0.3s);
+			&.active {
+				padding: 70px 20px;
+				display: block;
+				height: 100vh;
+				opacity: 1;
+				z-index: 99;
+			}
+		}
+		ul {
+			@include mq($max-width: 768px) {
+				display: block;
+				padding: 30px;
+			}
+			li {
+				padding: 0 10px;
+				display: inline-block;
+				position: relative;
+				&:first-child {
+					padding-left: 0;
+				}
+				&:last-child {
+					padding-right: 0;
+				}
+				@include mq($max-width: 768px) {
+					position: relative;
+					display: block;
+					border-bottom: 1px solid rgba(26, 26, 26, 0.30);
+					padding: 0;
+				}
+				a {
+					@include transition(all 0.5s);
+					@include mq($max-width: 768px) {
+						color: #000;
+						font-size: 18px;
+						display: block;
+						padding: 1.2em 1em 1em 1em;
+						border: none;
+						background: none;
+						box-shadow: none;
+						width: 100%;
+						text-align: left;
+					}
+				}
+			}
+		}
+		&__button {
+			position: relative;
+			text-align: right;
+			font-size: 1.7rem;
+			float: right;
+			background: none;
+			border: none;
+			display: none;
+			color: #000;
+			z-index: 100;
+			@include mq($max-width: 768px) {
+				display: block;
+			}
+		}
+		&__close {
+			display: none;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 1.7rem;
+			@include mq($max-width: 768px) {
+				display: block;
+			}
+		}
+		&__overlay {
+			background: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 99;
+			opacity: 1;
+			display: none;
+		}
+	}
+}
+/* bnr */
+.bnr {
+	background: url(../img/main-bg.jpg) no-repeat top;
+	background-size: cover;
+	margin-top: -193px;
+	padding-top: 253px;
+	&-box {
+		padding: 30px 16px 20px;
+		background-color: rgba(0, 0, 0, 0.75);
+		margin-bottom: 255px;
+		@include mq($max-width: 992px) {
+			margin-bottom: 125px;
+		}
+	}
+	h1 {
+		font-family: 'HelveticaNeueCyr', sans-serif;
+		font-size: 36px;
+		font-weight: bold;
+		letter-spacing: 1.8px;
+		line-height: normal;
+		color: #ffffff;
+		@include mq($max-width: 762px) {
+			font-size: 28px;
+		}
+	}
+}
+
+.booking-form {
+	padding-top: 7px;
+	box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.33);
+	background-color: rgba(26, 26, 26, 0.91);
+	form {
+		padding: 0 100px;
+		@include mq($max-width: 1200px) {
+			padding: 0;
+		}
+	}
+
+	&-item {
+		position: relative;
+		span {
+			display: block;
+			font-size: 15px;
+			font-weight: 300;
+			letter-spacing: 0.75px;
+			line-height: 2;
+			color: #ffffff;
+		}
+
+		input[type=text],
+		select,
+		option {
+			margin-bottom: 19px;
+			padding: 15px;
+			border: none;
+			border-radius: 3px;
+			background-color: #f9f9f9;
+			border: solid 1px rgba(0, 0, 0, 0.15);
+			font-family: 'HelveticaNeueCyr-Roman', sans-serif;
+			font-size: 17px;
+			letter-spacing: 0.85px;
+			text-align: left;
+			color: #969595;
+			@include mq($max-width: 767px) {
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+		.datepicker {
+			width: 153px;
+			background-image: url(../img/calendary-ico.png);
+			background-repeat: no-repeat;
+			background-position: 12px 50%;
+			&[placeholder] {
+				padding-left: 40px;
+			}
+		}
+		input[type=submit] {
+			margin-top: 14px;
+			margin-bottom: 19px;
+			min-width: 190px;
+			font-size: 14px;
+			font-weight: bold;
+			letter-spacing: 0.7px;
+			text-transform: uppercase;
+		}
+		&__arrow:before {
+			content: url(../img/input-arrow.png);
+			position: absolute;
+			right: -42px;
+			top: 42px;
+			display: block;
+			@include mq($max-width: 768px) {
+				display: none;
+			}
+		}
+	}
+}
+
+/* Footer */
+.footer {
+	background: #fff;
+	&-top {
+		padding-top: 50px;
+		max-width: 90%;
+		margin: 0 auto;
+		padding-bottom: 30px;
+		&__title {
+			margin-top: 30px;
+			font-size: 24px;
+			font-weight: 400;
+			color: #a3a3a3;
+			margin-bottom: 30px;
+			@include mq($max-width: 768px) {
+				text-align: center;
+			}
+		}
+		&__list {
+			padding-bottom: 30px;
+			@include mq($max-width: 768px) {
+				text-align: center;
+			}
+			li {
+				font-size: 18px;
+				color: #505050;
+				line-height: 1.65;
+			}
+			a {
+				text-decoration: none;
+				&:hover {
+					color: #e31937;
+				}
+			}
+		}
+	}
+	&-copyright {
+		max-width: 90%;
+		margin: 0 auto;
+		@include mq($max-width: 992px) {
+			text-align: center;
+		}
+		&__box {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			@include mq($max-width: 992px) {
+				justify-content: center;
+			}
+		}
+		&__item {
+			padding-bottom: 15px;
+		}
+		p {
+			color: #b0b0b0;
+			font-size: 12px;
+		}
+	}
+}

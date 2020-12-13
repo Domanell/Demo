@@ -1,0 +1,51 @@
+.waitlist__bnr {
+	padding-top: 125px;
+	padding-bottom: 0px;
+}
+.waitlist{
+	padding-bottom: 50px;
+	padding-top: 0;
+	background-color: #f3f3f3;
+	h1{
+		padding-top: 10px;
+		padding-bottom: 30px;
+	}
+	&-img{
+		padding-top: 50px;
+		img{
+			width: 100%;
+			padding-bottom: 30px;
+			display: block;
+			margin: 0 auto;
+			@include mq($max-width: 992px) {
+				width: 50%;
+			}
+			@include mq($max-width: 575px) {
+				width: 70%;
+			}
+		}
+	}
+	&-content{
+		padding: 50px 30px;
+		background-color: #fff;
+		@include mq($max-width: 575px) {
+			padding: 15px 20px;
+		}
+	}
+}
+.form-policy{
+	display: flex;
+	input{
+		flex-shrink: 0;
+	}
+	label{
+		font-size: 14px;
+		line-height: normal;
+	}
+	color: #404040;
+	padding-bottom: 30px;
+	a{
+		color: #5692ce;
+		text-decoration: none;
+	}
+}
