@@ -200,6 +200,13 @@ $(document).ready(function() {
         $('.webinar-content__tab').hide();
         $($(this).attr('href')).show();
     });
+	$('.pricing-tabs a').click(function(event){
+        event.preventDefault();
+        $('.pricing-tabs a').removeClass('active');
+        $(this).addClass('active');
+        $('.pricing-tab-content').hide();
+        $($(this).attr('href')).show();
+    });
 
 	//show modal
 	$("body").one('mouseleave', function() {
@@ -247,39 +254,14 @@ $(document).ready(function() {
 		}
 	});
 	
-	//pricing cart mobile screen
-	$(".pricing-cart__button").on("click", function(event) {
-		event.preventDefault();
-		//disable cart with opened menu
-		if (!$("nav.navigation").hasClass("active") && $(".pricing-summary").children().length > 0){  
-			$(".pricing-summary").toggleClass( "active");
-		}
+	// open/close cart
+	$('.pricing-cart-icon__button').on('click',function(){
+		$('.pricing-cart').addClass('active');
 	});
-	
-	//close cart button event
-	$(".pricing-summary__button-close a").on("click", closeCartMobile);
-
-	//resize screen cart behavior
-	$(window).resize(function(event) { 
-		let width = event.target.innerWidth;
-		if (width >= 1200 && $(".pricing-summary")) {
-			$(".pricing-summary").addClass( "active");
-		} 
-		else if (width < 1200 && $(".pricing-summary")) {
-			$(".pricing-summary").removeClass( "active");
-		}
+	$('.pricing-cart__button-close a').on('click',function(){
+		$('.pricing-cart').removeClass('active');
 	});
 
-	setPricingContainer();
-	
-	//pricing add to cart notification
-	$(".pricing-section .button").on("click", function(event) {
-		if ($(this).text() == "Add to cart") {
-			event.preventDefault();
-			$(".pricing-notification").fadeIn( "slow");
-			$(".pricing-notification").delay(3000).fadeOut('slow');
-		}
-	});
 });
 
 //fixed
@@ -292,36 +274,3 @@ $(window).scroll(function() {
 		$(".header-index").removeClass("fixed");
 	}
 });
-
-//change container width with and without cart
-function setPricingContainer() {
-	if ($(".pricing-summary") && $(".pricing-summary").children().length == 0) {
-		$(".pricing-section_shrinker").addClass("no-cart");
-		$(".pricing-summary").removeClass( "active"); //close cart section when cart is empty
-	} else if ($(".pricing-summary") && $(".pricing-summary").children().length > 0) {
-		$(".pricing-section_shrinker").removeClass("no-cart");
-	}
-}
-
-//close cart button on mobile
-function closeCartMobile() {
-	$(".pricing-summary").removeClass( "active");
-}
-
-//accordion
-function pricingRefreshListener(){
-	$( ".pricing-section__accordion-trigger" ).click(function() {
-		$(this).prev().slideToggle( "fast");
-		$(this).toggleClass( "active");
-	  });
-	  $( ".pricing-section__pos-trigger" ).click(function() {
-		$(".pos-section").slideToggle( "fast");
-	  });
-}
-function pricingSectionAccordion() {
-	$(this).prev().slideToggle( "fast");
-	$(this).toggleClass( "active");
-}
-function pricingPosAccordion() {
-	$(".pos-section").slideToggle( "fast");
-}
