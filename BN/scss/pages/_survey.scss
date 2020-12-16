@@ -1,0 +1,218 @@
+.survey-item{
+  position: relative;
+  display: block;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+  img{
+    width: 100%;
+    display: block;
+  }
+  span{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #000000;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1.6px;
+    width: 279px;
+    @include mq($max-width: 767px) {
+      font-size: 18px;
+    }
+  }
+}
+.survey-text{
+  padding: 90px 0 56px 0;
+  color: #111111;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.9px;
+}
+.survey-section{
+  padding-bottom: 0px;
+}
+.survey-box{
+  background:  url(../img/bg-about.png) repeat;
+  padding-bottom: 60px;
+  .pager{
+    padding-top: 10px;
+  }
+}
+
+//webinar
+.webinar-top{
+  background: #f6f6f6;
+  height: auto;
+  padding-bottom: 20px;
+  &:before, &:after{
+    display: none;
+  }
+  h1{
+    &:after{
+      display: none;
+    }
+  }
+}
+.webinar-filter{
+  background: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.36);
+  border-bottom: 3px solid #000;
+  padding: 10px 0;
+  &__nav{
+    border-radius: 4px;
+    border: 1px solid #f6f6f6;
+    background: #f6f6f6;
+    display: flex;
+    border: 1px solid #000;
+    overflow: hidden;
+    a{
+      padding: 15px;
+      display: block;
+      text-align: center;
+      flex: 1;
+      color: #2d2c2c;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      text-decoration: none;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      &:first-child{
+        border-right: 1px solid #f6f6f6;
+      }
+      &:hover, &.active{
+        background: #fbcd04;
+      }
+      i{
+        padding: 0 4px 0 0;
+      }
+    }
+    @include mq($max-width: 992px) {
+      margin-bottom: 15px;
+    }
+  }
+  &__select{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    @include mq($max-width: 992px) {
+      margin-bottom: 15px;
+    }
+    &:before{
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+      content: "\f078";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%); 
+      z-index: 0;
+    }
+    select{
+      color: #292828;
+      font-size: 16px;
+      font-weight: 400;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+      letter-spacing: 0.16px;
+      background: none;
+      border: none;
+      width: 100%;
+      display: block;
+      position: relative;
+      z-index: 1;
+      padding-right: 20px;
+      &::-ms-expand {
+        display: none;
+      }
+    }
+  }
+}
+.webinar-content__tab{
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+.webinar-result{
+    color: #000000;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 45px 0 35px 0;
+}
+.webinar-item{
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  margin-bottom: 30px;
+  background: #f9f9f9;
+  &__date{
+    height: 100%;
+    background: rgba($color: #fbcd04, $alpha: .25);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 10px;
+    border-left: 5px solid #fbcd04;
+    border-bottom: 5px solid #fbcd04;
+    strong{
+      display: block;
+      font-size: 60px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      @include mq($max-width: 767px) {
+        font-size: 30px;
+      }
+    }
+  }
+  &__text{
+    padding: 20px 15px;
+    @include mq($max-width: 767px) {
+     text-align: center;
+    }
+    nav{
+      color: #000000;
+      font-size: 16px;
+      font-weight: 300;
+      text-transform: uppercase;
+      padding-bottom: 14px;
+      a{
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    h4{
+      color: #000000;
+      font-size: 24px;
+      font-weight: 700;
+      padding-bottom: 20px;
+      letter-spacing: 0.24px;
+    }
+    .button{
+      padding: 15px 40px;
+      color: #000000;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 3px;
+      text-transform: uppercase;
+      box-shadow: none;
+    }
+  }
+}
