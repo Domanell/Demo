@@ -206,7 +206,14 @@ $(document).ready(function() {
         $(this).addClass('active');
         $('.pricing-tab-content').hide();
         $($(this).attr('href')).show();
-    });
+	 });
+	$('.pricing-product-tabs li').click(function(event){
+		  $('.pricing-product-tabs li').removeClass('active');
+        $(this).addClass('active');
+        $('#pricing-products .pricing-card').parent().hide();
+		  $('.' + $(this).attr('data-product')).parent().show();
+	 });
+	 
 
 	//show modal
 	$("body").one('mouseleave', function() {
