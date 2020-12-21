@@ -200,20 +200,7 @@ $(document).ready(function() {
         $('.webinar-content__tab').hide();
         $($(this).attr('href')).show();
     });
-	$('.pricing-tabs a').click(function(event){
-        event.preventDefault();
-        $('.pricing-tabs a').removeClass('active');
-        $(this).addClass('active');
-        $('.pricing-tab-content').hide();
-        $($(this).attr('href')).show();
-	 });
-	$('.pricing-product-tabs li').click(function(event){
-		  $('.pricing-product-tabs li').removeClass('active');
-        $(this).addClass('active');
-        $('#pricing-products .pricing-card').parent().hide();
-		  $('.' + $(this).attr('data-product')).parent().show();
-	 });
-	 
+ 
 
 	//show modal
 	$("body").one('mouseleave', function() {
@@ -281,3 +268,20 @@ $(window).scroll(function() {
 		$(".header-index").removeClass("fixed");
 	}
 });
+
+
+function pricingTabs() {
+	$('.pricing-tabs a').click(function(event){
+		event.preventDefault();
+		$('.pricing-tabs a').removeClass('active');
+		$(this).addClass('active');
+		$('.pricing-tab-content').hide();
+		$($(this).attr('href')).show();
+	});
+	$('.pricing-product-tabs li').click(function(event){
+		$('.pricing-product-tabs li').removeClass('active');
+		$(this).addClass('active');
+		$('#pricing-products .pricing-card').parent().hide();
+		$('.' + $(this).attr('data-product')).parent().show();
+	});
+}
