@@ -94,7 +94,8 @@ $(document).ready(function() {
 	$( ".navigation__button" ).click(function() {
 	  $( ".navigation" ).toggleClass( "active");
 	  $( this ).find("i").toggleClass( "fa-times");
-	  $( ".navigation__overlay" ).toggle( );
+	  $( ".navigation__overlay" ).toggleClass("active");
+	  $( "body" ).toggleClass("no-scroll");
 	});
 	// $( ".navigation__close" ).click(function() {
 	//   $( ".navigation" ).removeClass( "active");
@@ -102,7 +103,6 @@ $(document).ready(function() {
 	// });
 	$( ".navigation__overlay" ).click(function() {
 		$( ".navigation" ).removeClass( "active");
-		$( ".navigation__overlay" ).hide( );
 	});
 
 	//accordeon
@@ -193,14 +193,11 @@ $(document).ready(function() {
         $('.checkout-payment__tab').hide();
         $($(this).attr('href')).show();
     });
-	$('.webinar-filter__nav a').click(function(event){
-        event.preventDefault();
-        $('.webinar-filter__nav a').removeClass('active');
-        $(this).addClass('active');
-        $('.webinar-content__tab').hide();
-        $($(this).attr('href')).show();
-    });
- 
+	$('.webinar-tabs label').click(function(){
+		$('.webinar-tab-content').toggleClass('active');
+		console.log('1');
+	});
+
 
 	//show modal
 	$("body").one('mouseleave', function() {
@@ -284,4 +281,10 @@ function pricingSubtabsTrigger(el, data) {
 	$(el).addClass('active');
 	$('#pricing-products .pricing-card').parent().hide();
 	$('.' + data).parent().show();
+}
+
+//pricing add to cart notification
+function pricingNotification() {
+	$(".pricing-notification").fadeIn( "slow");
+	$(".pricing-notification").delay(2000).fadeOut('slow');
 }
