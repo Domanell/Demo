@@ -119,7 +119,7 @@ $(document).ready(function() {
 		$(this).toggleClass( "active");
 	  });
 	  $( ".landing__faq-question" ).click(function() {
-		$(this).next().slideToggle( "fast")
+		$(this).next().slideToggle( "fast");
 		$(this).parent().toggleClass( "active");
 	  });
 
@@ -239,9 +239,9 @@ $(document).ready(function() {
 	// input number arrows
 	$('.input-number button').on('click',function(){
 		if($(this).hasClass('input-number__plus')){
-			this.nextElementSibling.stepUp()
+			this.nextElementSibling.stepUp();
 		} else if ($(this).hasClass('input-number__minus')){
-			this.previousElementSibling.stepDown()
+			this.previousElementSibling.stepDown();
 		}
 	});
 	
@@ -260,9 +260,9 @@ $(window).scroll(function() {
 	var scroll = $(window).scrollTop();
 
 	if (scroll >= 100) {
-		$(".header-index").addClass("fixed");
+		$(".header").addClass("fixed");
 	} else {
-		$(".header-index").removeClass("fixed");
+		$(".header").removeClass("fixed");
 	}
 });
 
@@ -283,8 +283,3 @@ function pricingSubtabsTrigger(el, data) {
 	$('.' + data).parent().show();
 }
 
-//pricing add to cart notification
-function pricingNotification() {
-	$(".pricing-notification").fadeIn( "slow");
-	$(".pricing-notification").delay(2000).fadeOut('slow');
-}
