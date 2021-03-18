@@ -65,7 +65,7 @@ function setTabsView(element, event) {
 
       //slick slider reinitialize
       $('.checkout-item__slider').slick('unslick');
-      $('.checkout-item__slider').slick();
+      $('.checkout-item__slider').slick(getSliderSettings());
    }
 }
 function setListView(element, event) {
@@ -78,7 +78,7 @@ function setListView(element, event) {
 
       //slick slider reinitialize
       $('.checkout-item__slider').slick('unslick');
-      $('.checkout-item__slider').slick();
+      $('.checkout-item__slider').slick(getSliderSettings());
    }
 }
 
@@ -93,7 +93,7 @@ function tabToggle(element, event) {
 
       //slick slider reinitialize
       $('.checkout-item__slider').slick('unslick');
-      $('.checkout-item__slider').slick();
+      $('.checkout-item__slider').slick(getSliderSettings());
    }
 }
 
