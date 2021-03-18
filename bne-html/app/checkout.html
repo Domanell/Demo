@@ -1,0 +1,1068 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="initial-scale=1" name="viewport" />
+	<title>BNE Checkout</title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+	<link href="css/slick.css" rel="stylesheet" />
+	<link href="css/slick-theme.css" rel="stylesheet" />
+	<link href="css/slick-lightbox.css" rel="stylesheet" />
+	<link href="css/bootstrap-grid.css" rel="stylesheet" />
+	<link href="css/bootstrap-datepicker3.standalone.css" rel="stylesheet" />
+	<link href="css/styles.css" media="screen" rel="stylesheet" />
+	<!-- END OF CSS -->
+	<!--SCRIPTS -->
+	<script src="https://d1b89zc79exfxt.cloudfront.net/js/jquery.js"></script>
+	<!-- END OF SCRIPTS -->
+</head>
+
+<body>
+	<!-- Header -->
+	<header class="header">
+	</header>
+	<!-- Header end -->
+
+	<!-- Main -->
+	<div class="main">
+		<div class="container">
+			<!-- Navigation and View -->
+			<div class="checkout-navigation-top row justify-content-between">
+				<div class="col-auto">
+					<a href="#" class="back-btn">
+						<div class="back-btn__img">
+							<svg version="1.1" x="0px" y="0px" width="17px" height="12px" fill="#6c758c" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 447.243 447.243" style="enable-background:new 0 0 447.243 447.243;" xml:space="preserve">
+								<g>
+									<path d="M420.361,192.229c-1.83-0.297-3.682-0.434-5.535-0.41H99.305l6.88-3.2c6.725-3.183,12.843-7.515,18.08-12.8l88.48-88.48
+										c11.653-11.124,13.611-29.019,4.64-42.4c-10.441-14.259-30.464-17.355-44.724-6.914c-1.152,0.844-2.247,1.764-3.276,2.754
+										l-160,160C-3.119,213.269-3.13,233.53,9.36,246.034c0.008,0.008,0.017,0.017,0.025,0.025l160,160
+										c12.514,12.479,32.775,12.451,45.255-0.063c0.982-0.985,1.899-2.033,2.745-3.137c8.971-13.381,7.013-31.276-4.64-42.4
+										l-88.32-88.64c-4.695-4.7-10.093-8.641-16-11.68l-9.6-4.32h314.24c16.347,0.607,30.689-10.812,33.76-26.88
+										C449.654,211.494,437.806,195.059,420.361,192.229z" />
+								</g>
+							</svg>
+						</div>
+						Back to Room & Rates
+					</a>
+				</div>
+				<div class="col-auto">
+					<div class="view-toggler">
+						<span>Select view</span>
+						<a class="view-toggler__btn active" onclick="setTabsView(this, event)">
+							<img src="img/view-toggler-1.png" alt="Category View" />
+						</a>
+						<a class="view-toggler__btn" onclick="setListView(this, event)">
+							<img src="img/view-toggler-2.png" alt="View All" />
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Tabs -->
+			<div class="checkout-tabs active">
+				<ul>
+					<li><a id="chechout-room" class="active" onclick="tabToggle(this, event)">Rooms</a></li>
+					<li><a id="chechout-conference" onclick="tabToggle(this, event)">Сonference center</a></li>
+					<li><a id="chechout-restaurant" onclick="tabToggle(this, event)">Restaurant reservation</a></li>
+					<li><a id="chechout-ticket" onclick="tabToggle(this, event)">Event Tickets</a></li>
+				</ul>
+			</div>
+			<!-- /Tabs -->
+
+			<!-- Rooms tab content -->
+			<div class="checkout-tab-content active" data-tab-id="chechout-room">
+				<h2 class="checkout-tab-title">Rooms</h2>
+				<!-- item #1 - Rooms -->
+				<div class="checkout-item">
+					<div class="row no-gutters">
+						<!-- slider -->
+						<div class="col-12 col-lg-4 col-xl-3">
+							<div class="checkout-item__slider">
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+							</div>
+
+						</div>
+						<!-- content -->
+						<div class="col-12 col-lg-8 col-xl-9">
+							<div class="checkout-item__wrapper">
+								<div class="row align-items-center">
+									<div class="col d-flex align-items-center checkout-item__cell">
+										<h3 class="checkout-item__title">
+											6 rooms Standard King Room
+										</h3>
+										<a href="#" class="checkout-item__location-btn">
+											<img src="img/location-icon.png" alt="" />
+										</a>
+									</div>
+									<div class="col-auto checkout-item__cell">
+										<div class="checkout-item__amount">
+											Amount
+											<big>$2572.81</big>
+										</div>
+									</div>
+								</div>
+								<div class="row align-items-center">
+									<!-- date -->
+									<div class="col-sm col-md-auto checkout-item__cell">
+										<div class="checkout-item__date">
+											<img src="img/calendar.png" />
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="arrival">
+											<span> - </span>
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="departure">
+										</div>
+									</div>
+									<!-- refund  -->
+									<div class="col checkout-item__cell">
+										<div class="checkout-item__refund">
+											refundable
+											<label>
+												<input type="checkbox" id="" />
+												<span></span>
+											</label>
+											non refundable
+										</div>
+									</div>
+									<!-- # of rooms -->
+									<div class="col-md-4 col-xl-auto checkout-item__cell">
+										<div class="checkout-item__rooms-quantity">
+											<select class="checkout-select" name="" id="">
+												<option value="" selected># of rooms</option>
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+											</select>
+										</div>
+									</div>
+									<!-- # of guests -->
+									<div class="col-sm-6 col-md-auto col-lg-auto checkout-item__cell">
+										<div class="checkout-item__guest-quantity d-flex">
+											# of Adult Guests
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- # of childrens -->
+									<div class="col-sm-6 col-md-auto col-lg checkout-item__cell">
+										<div class="checkout-item__guest-quantity">
+											# of Childrens
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- accordion trigger -->
+									<div class="col-auto self checkout-item__cell">
+										<a class="checkout-item__accordion-trigger" id="accordion-1" onclick="accordionToggle(this, event)">
+											<!-- id for accordion content -->
+											Add guest information</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- accordion -->
+						<div class="col-12 checkout-item__accordion" data-accordion-id="accordion-1">
+							<!-- guest form -->
+							<div class="checkout-form">
+								<h4 class="checkout-form__title">Guest 1 Information</h4>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Main Guest Full Name</span>
+												<input type="text"/ required placeholder="Michael Scott">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<div class="checkout-form__item">
+											<label>
+												<span>Number of Guests</span>
+												<div class="input-number">
+													<input type="number" value="2" min="0" max="99">
+													<div class="input-number__buttons">
+														<button class="input-number__plus" type="button">
+															<img src="/img/icon-up.svg" alt="Increase value" />
+														</button>
+														<button class="input-number__minus" type="button">
+															<img src="/img/icon-down.svg" alt="Decrease value" />
+														</button>
+													</div>
+												</div>
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="checkout-form__item">
+											<label>
+												<span>Your room</span>
+												<select class="checkout-select" name="" id="">
+													<option value="" disabled="" selected="">6 rooms Standard King Room</option>
+													<option value="">value</option>
+													<option value="">value</option>
+													<option value="">value</option>
+												</select>
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Guest Email</span>
+												<input type="email"/ required placeholder="mscott@office.com">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span>Main Guest Phone Number</span>
+												<input type="number" value="" placeholder="+1 (917) 600 2345">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<label class="checkout-form__item-checkbox">
+											<input type="checkbox">
+											1 guest to several rooms
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- item #2 - Rooms -->
+				<div class="checkout-item">
+					<div class="row no-gutters">
+						<!-- slider -->
+						<div class="col-12 col-lg-4 col-xl-3">
+							<div class="checkout-item__slider">
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+							</div>
+						</div>
+						<!-- content -->
+						<div class="col-12 col-lg-8 col-xl-9">
+							<div class="checkout-item__wrapper">
+								<div class="row align-items-center">
+									<div class="col d-flex align-items-center checkout-item__cell">
+										<h3 class="checkout-item__title">
+											6 rooms Standard King Room
+										</h3>
+										<a href="#" class="checkout-item__location-btn">
+											<img src="img/location-icon.png" alt="" />
+										</a>
+									</div>
+									<div class="col-auto checkout-item__cell">
+										<div class="checkout-item__amount">
+											Amount
+											<big>$2572.81</big>
+										</div>
+									</div>
+								</div>
+								<div class="row align-items-center">
+									<!-- date -->
+									<div class="col-sm col-md-auto checkout-item__cell">
+										<div class="checkout-item__date">
+											<img src="img/calendar.png" />
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="arrival">
+											<span> - </span>
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="departure">
+										</div>
+									</div>
+									<!-- refund  -->
+									<div class="col checkout-item__cell">
+										<div class="checkout-item__refund">
+											refundable
+											<label>
+												<input type="checkbox" id="" />
+												<span></span>
+											</label>
+											non refundable
+										</div>
+									</div>
+									<!-- # of rooms -->
+									<div class="col-md-4 col-xl-auto checkout-item__cell">
+										<div class="checkout-item__rooms-quantity">
+											<select class="checkout-select" name="" id="">
+												<option value="" selected># of rooms</option>
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+											</select>
+										</div>
+									</div>
+									<!-- # of guests -->
+									<div class="col-sm-6 col-md-auto col-lg-auto checkout-item__cell">
+										<div class="checkout-item__guest-quantity d-flex">
+											# of Adult Guests
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- # of childrens -->
+									<div class="col-sm-6 col-md-auto col-lg checkout-item__cell">
+										<div class="checkout-item__guest-quantity">
+											# of Childrens
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- accordion trigger -->
+									<div class="col-auto self checkout-item__cell">
+										<a class="checkout-item__accordion-trigger" id="accordion-2" onclick="accordionToggle(this, event)">
+											<!-- id for accordion content -->
+											Add guest information</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- accordion -->
+						<div class="col-12 checkout-item__accordion" data-accordion-id="accordion-2">
+							<!-- guest form -->
+							<div class="checkout-form">
+								<h4 class="checkout-form__title">Guest 1 Information</h4>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Main Guest Full Name</span>
+												<input type="text"/ required placeholder="Michael Scott">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<div class="checkout-form__item">
+											<label>
+												<span>Number of Guests</span>
+												<div class="input-number">
+													<input type="number" value="2" min="0" max="99">
+													<div class="input-number__buttons">
+														<button class="input-number__plus" type="button">
+															<img src="/img/icon-up.svg" alt="Increase value" />
+														</button>
+														<button class="input-number__minus" type="button">
+															<img src="/img/icon-down.svg" alt="Decrease value" />
+														</button>
+													</div>
+												</div>
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="checkout-form__item">
+											<label>
+												<span>Your room</span>
+												<select class="checkout-select" name="" id="">
+													<option value="" disabled="" selected="">6 rooms Standard King Room</option>
+													<option value="">value</option>
+													<option value="">value</option>
+													<option value="">value</option>
+												</select>
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Guest Email</span>
+												<input type="email"/ required placeholder="mscott@office.com">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span>Main Guest Phone Number</span>
+												<input type="number" class="phone-number" value="" placeholder="+1 (917) 600 2345">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<label class="checkout-form__item-checkbox">
+											<input type="checkbox">
+											1 guest to several rooms
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Сonference center tab content -->
+			<div class="checkout-tab-content" data-tab-id="chechout-conference">
+				<h2 class="checkout-tab-title">Сonference center</h2>
+				<!-- item #3 - Restaurant reservations -->
+				<div class="checkout-item">
+					<div class="row no-gutters">
+						<!-- slider -->
+						<div class="col-12 col-lg-4 col-xl-3">
+							<div class="checkout-item__slider">
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+							</div>
+						</div>
+						<!-- content -->
+						<div class="col-12 col-lg-8 col-xl-9">
+							<div class="checkout-item__wrapper">
+
+								<div class="row align-items-center">
+									<div class="col d-flex align-items-center checkout-item__cell">
+										<h3 class="checkout-item__title">
+											6 rooms Standard King Room
+										</h3>
+										<a href="#" class="checkout-item__location-btn">
+											<img src="img/location-icon.png" alt="" />
+										</a>
+									</div>
+									<div class="col-auto checkout-item__cell">
+										<div class="checkout-item__amount">
+											Amount
+											<big>$2572.81</big>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="row align-items-center">
+									<!-- date -->
+									<div class="col-sm col-md-auto checkout-item__cell">
+										<div class="checkout-item__date">
+											<img src="img/calendar.png" />
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="arrival">
+											<span> - </span>
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="departure">
+										</div>
+									</div>
+									<!-- refund  -->
+									<div class="col checkout-item__cell">
+										<div class="checkout-item__refund">
+											refundable
+											<label>
+												<input type="checkbox" id="" />
+												<span></span>
+											</label>
+											non refundable
+										</div>
+									</div>
+									<!-- # of rooms -->
+									<div class="col-md-4 col-xl-auto checkout-item__cell">
+										<div class="checkout-item__rooms-quantity">
+											<select class="checkout-select" name="" id="">
+												<option value="" selected># of rooms</option>
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+											</select>
+										</div>
+									</div>
+									<!-- # of guests -->
+									<div class="col-sm-6 col-md-auto col-lg-auto checkout-item__cell">
+										<div class="checkout-item__guest-quantity d-flex">
+											# of Adult Guests
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- # of childrens -->
+									<div class="col-sm-6 col-md-auto col-lg checkout-item__cell">
+										<div class="checkout-item__guest-quantity">
+											# of Childrens
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- accordion trigger -->
+									<div class="col-auto self checkout-item__cell">
+										<a class="checkout-item__accordion-trigger" id="accordion-3" onclick="accordionToggle(this, event)">
+											<!-- id for accordion content -->
+											Add guest information</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- accordion -->
+						<div class="col-12 checkout-item__accordion" data-accordion-id="accordion-3">
+							<!-- guest form -->
+							<div class="checkout-form">
+								<h4 class="checkout-form__title">Guest 1 Information</h4>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Main Guest Full Name</span>
+												<input type="text"/ required placeholder="Michael Scott">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<div class="checkout-form__item">
+											<label>
+												<span>Number of Guests</span>
+												<div class="input-number">
+													<input type="number" value="2" min="0" max="99">
+													<div class="input-number__buttons">
+														<button class="input-number__plus" type="button">
+															<img src="/img/icon-up.svg" alt="Increase value" />
+														</button>
+														<button class="input-number__minus" type="button">
+															<img src="/img/icon-down.svg" alt="Decrease value" />
+														</button>
+													</div>
+												</div>
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="checkout-form__item">
+											<label>
+												<span>Your room</span>
+												<select class="checkout-select" name="" id="">
+													<option value="" disabled="" selected="">6 rooms Standard King Room</option>
+													<option value="">value</option>
+													<option value="">value</option>
+													<option value="">value</option>
+												</select>
+											</label>
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Guest Email</span>
+												<input type="email"/ required placeholder="mscott@office.com">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span>Main Guest Phone Number</span>
+												<input type="number" class="phone-number" value="" placeholder="+1 (917) 600 2345">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<label class="checkout-form__item-checkbox">
+											<input type="checkbox">
+											1 guest to several rooms
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="checkout-bill-select">
+					<div class="row no-gutters">
+						<div class="col-12 col-lg-4 col-xl-3">
+							<select class="checkout-select" name="" id="">
+								<option value="" selected>Bill</option>
+								<option value="">Guest 1 Name Surname</option>
+								<option value="">Guest 1 Name Surname</option>
+								<option value="">Guest 1 Name Surname</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Restaurant reservation tab content -->
+			<div class="checkout-tab-content" data-tab-id="chechout-restaurant">
+				<h2 class="checkout-tab-title">Restaurant reservations</h2>
+				<!-- item #4 - Сonference center -->
+				<div class="checkout-item">
+					<div class="row no-gutters">
+						<!-- slider -->
+						<div class="col-12 col-lg-4 col-xl-3">
+							<div class="checkout-item__slider">
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+								<div class="checkout-item__slide" data-image-src="img/room-item-photo.png"><img src="img/room-item-photo.png" alt="" /></div>
+							</div>
+						</div>
+						<!-- content -->
+						<div class="col-12 col-lg-8 col-xl-9">
+							<div class="checkout-item__wrapper">
+
+								<div class="row align-items-center">
+									<div class="col d-flex align-items-center checkout-item__cell">
+										<h3 class="checkout-item__title">
+											6 rooms Standard King Room
+										</h3>
+										<a href="#" class="checkout-item__location-btn">
+											<img src="img/location-icon.png" alt="" />
+										</a>
+									</div>
+									<div class="col-auto checkout-item__cell">
+										<div class="checkout-item__amount">
+											Amount
+											<big>$2572.81</big>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="row align-items-center">
+									<!-- date -->
+									<div class="col-sm col-md-auto checkout-item__cell">
+										<div class="checkout-item__date">
+											<img src="img/calendar.png" />
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="arrival">
+											<span> - </span>
+											<input type="text" name="" class="datepicker" autocomplete="off" placeholder="Choose a date" data-chosedate="departure">
+										</div>
+									</div>
+									<!-- refund  -->
+									<div class="col checkout-item__cell">
+										<div class="checkout-item__refund">
+											refundable
+											<label>
+												<input type="checkbox" id="" />
+												<span></span>
+											</label>
+											non refundable
+										</div>
+									</div>
+									<!-- # of rooms -->
+									<div class="col-md-4 col-xl-auto checkout-item__cell">
+										<div class="checkout-item__rooms-quantity">
+											<select class="checkout-select" name="" id="">
+												<option value="" selected># of rooms</option>
+												<option value="">1</option>
+												<option value="">2</option>
+												<option value="">3</option>
+											</select>
+										</div>
+									</div>
+									<!-- # of guests -->
+									<div class="col-sm-6 col-md-auto col-lg-auto checkout-item__cell">
+										<div class="checkout-item__guest-quantity d-flex">
+											# of Adult Guests
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- # of childrens -->
+									<div class="col-sm-6 col-md-auto col-lg checkout-item__cell">
+										<div class="checkout-item__guest-quantity">
+											# of Childrens
+											<div class="input-number">
+												<input type="number" value="2" min="0" max="99">
+												<div class="input-number__buttons">
+													<button class="input-number__plus" type="button">
+														<img src="/img/icon-up-gray.svg" alt="Increase value" />
+													</button>
+													<button class="input-number__minus" type="button">
+														<img src="/img/icon-down-gray.svg" alt="Decrease value" />
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- accordion trigger -->
+									<div class="col-auto self checkout-item__cell">
+										<a class="checkout-item__accordion-trigger" id="accordion-4" onclick="accordionToggle(this, event)">
+											<!-- id for accordion content -->
+											Add guest information</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<!-- accordion -->
+						<div class="col-12 checkout-item__accordion" data-accordion-id="accordion-4">
+							<!-- guest form -->
+							<div class="checkout-form">
+								<h4 class="checkout-form__title">Guest 1 Information</h4>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Main Guest Full Name</span>
+												<input type="text"/ required placeholder="Michael Scott">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-2">
+										<div class="checkout-form__item">
+											<label>
+												<span>Number of Guests</span>
+												<div class="input-number">
+													<input type="number" value="2" min="0" max="99">
+													<div class="input-number__buttons">
+														<button class="input-number__plus" type="button">
+															<img src="/img/icon-up.svg" alt="Increase value" />
+														</button>
+														<button class="input-number__minus" type="button">
+															<img src="/img/icon-down.svg" alt="Decrease value" />
+														</button>
+													</div>
+												</div>
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-4">
+										<div class="checkout-form__item">
+											<label>
+												<span>Your room</span>
+												<select class="checkout-select" name="" id="">
+													<option value="" disabled="" selected="">6 rooms Standard King Room</option>
+													<option value="">value</option>
+													<option value="">value</option>
+													<option value="">value</option>
+												</select>
+											</label>
+										</div>
+									</div>
+
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span><b>*</b> Guest Email</span>
+												<input type="email"/ required placeholder="mscott@office.com">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="checkout-form__item">
+											<label>
+												<span>Main Guest Phone Number</span>
+												<input type="number" class="phone-number" value="" placeholder="+1 (917) 600 2345">
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<label class="checkout-form__item-checkbox">
+											<input type="checkbox">
+											1 guest to several rooms
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="checkout-bill-select">
+					<div class="row no-gutters">
+						<div class="col-12 col-lg-4 col-xl-3">
+							<select class="checkout-select" name="" id="">
+								<option value="" selected>Bill</option>
+								<option value="">Guest 1 Name Surname</option>
+								<option value="">Guest 1 Name Surname</option>
+								<option value="">Guest 1 Name Surname</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="checkout-form-wrapper">
+				<div class="checkout-amount">
+					<p>Total Amount: $5 728.00</p>
+				</div>
+				<div class="checkout-policy row justify-content-between">
+					<div class="col-md-auto"><a href="#">Privacy & Promotional offers</a></div>
+					<div class="col-md-auto"><a href="#">Booking policies</a></div>
+				</div>
+				<!-- Billing Information -->
+				<div class="checkout-form-section">
+					<div class="checkout-form">
+						<h4 class="checkout-form__title">Billing Information</h4>
+						<div class="row">
+							<div class="col-lg">
+								<div class="checkout-form__item">
+									<label>
+										<span><b>*</b> Main Guest Full Name</span>
+										<input type="text"/ required placeholder="Michael Scott">
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-auto">
+								<div class="checkout-form__item">
+									<label>
+										<span>Quantity</span>
+										<div class="input-number">
+											<input type="number" value="2" min="0" max="99">
+											<div class="input-number__buttons">
+												<button class="input-number__plus" type="button">
+													<img src="/img/icon-up.svg" alt="Increase value" />
+												</button>
+												<button class="input-number__minus" type="button">
+													<img src="/img/icon-down.svg" alt="Decrease value" />
+												</button>
+											</div>
+										</div>
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-6 col-lg-2">
+								<div class="checkout-form__item">
+									<label>
+										<span>Number of Guests</span>
+										<div class="input-number">
+											<input type="number" value="2" min="0" max="99">
+											<div class="input-number__buttons">
+												<button class="input-number__plus" type="button">
+													<img src="/img/icon-up.svg" alt="Increase value" />
+												</button>
+												<button class="input-number__minus" type="button">
+													<img src="/img/icon-down.svg" alt="Decrease value" />
+												</button>
+											</div>
+										</div>
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="checkout-form__item">
+									<label>
+										<span>Your room</span>
+										<select class="checkout-select" name="" id="">
+											<option value="" disabled="" selected="">6 rooms Standard King Room</option>
+											<option value="">value</option>
+											<option value="">value</option>
+											<option value="">value</option>
+										</select>
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout-form__item">
+									<label>
+										<span><b>*</b> Guest Email</span>
+										<input type="email"/ required placeholder="mscott@office.com">
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout-form__item">
+									<label>
+										<span>Main Guest Phone Number</span>
+										<input type="number" class="phone-number" value="" placeholder="+1 (917) 600 2345">
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout-form__item">
+									<label>
+										<span><b>*</b> Bill</span>
+										<select class="checkout-select" name="" id="" required>
+											<option value="" disabled="" selected="">Choose guest</option>
+											<option value="">value</option>
+											<option value="">value</option>
+											<option value="">value</option>
+										</select>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Payment information -->
+				<div class="checkout-form-section">
+					<div class="checkout-form">
+						<h4 class="checkout-form__title">Payment information</h4>
+						<div class="row">
+							<div class="col-md-6 col-lg-3">
+								<div class="checkout-form__item">
+									<label>
+										<span><b>*</b>Payment Method</span>
+										<select class="checkout-select" name="" id="">
+											<option value="" disabled="" selected="">Credit Card</option>
+											<option value="">value</option>
+											<option value="">value</option>
+											<option value="">value</option>
+										</select>
+									</label>
+								</div>
+							</div>
+							<div class="col-md-6 col-lg-3 align-self-end">
+								<div class="checkout-form__payment-method">
+									<a href="#"><img src="img/g-pay.png" alt="" /></a>
+									<a href="#"><img src="img/a-pay.png" alt="" /></a>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="row">
+									<div class="col-6">
+										<div class="checkout-form__item">
+											<label>
+												<span>Card Number</span>
+												<input type="number"/ required placeholder="XXXX XXXX XXXX XXXX">
+											</label>
+										</div>
+									</div>
+									<div class="col-4">
+										<div class="checkout-form__item">
+											<label>
+												<span>Expiration Date</span>
+												<input type="text"/ required placeholder="27/20">
+											</label>
+										</div>
+									</div>
+									<div class="col-2">
+										<div class="checkout-form__item">
+											<label>
+												<span>CVV</span>
+												<input type="text"/ required placeholder="***">
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="checkout-form__item">
+									<label>
+										<span>Country</span>
+										<select class="checkout-select" name="" id="" required>
+											<option value="" selected="">USA</option>
+											<option value="">value</option>
+											<option value="">value</option>
+											<option value="">value</option>
+										</select>
+									</label>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="checkout-form__item">
+									<label>
+										<span>State/Province</span>
+										<select class="checkout-select" name="" id="" required>
+											<option value="" selected="">New York</option>
+											<option value="">value</option>
+											<option value="">value</option>
+											<option value="">value</option>
+										</select> </label>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="checkout-form__item">
+									<label>
+										<span>City</span>
+										<select class="checkout-select" name="" id="" required>
+											<option value="" selected="">New York</option>
+											<option value="">value</option>
+											<option value="">value</option>
+											<option value="">value</option>
+										</select>
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-8 col-lg-4">
+								<div class="checkout-form__item">
+									<label>
+										<span><b>*</b> Street</span>
+										<input type="text" />
+									</label>
+								</div>
+							</div>
+							<div class="col-sm-4 col-lg-2">
+								<div class="checkout-form__item">
+									<label>
+										<span>Postal Code</span>
+										<input type="number" />
+									</label>
+								</div>
+							</div>
+						</div>
+						<input type="submit" class="checkout-form__submit" value="Confirm" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- Main end -->
+
+	<!-- Footer -->
+	<footer class="footer">
+	</footer>
+	<!-- Footer end -->
+
+	<!-- Scripts -->
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/slick.js"></script>
+	<script src="js/slick-lightbox.min.js"></script>
+	<script src="js/common.js"></script>
+	<!-- Scripts end -->
+</body>
+
+</html>
