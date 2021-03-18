@@ -30,7 +30,7 @@ body {
 
 .view-toggler {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	span {
 		padding-right: 27px;
@@ -53,7 +53,7 @@ body {
 			background-color: #ffffff;
 		}
 		img {
-			width: 100%;
+			width: 20px;
 			display: block;
 		}
 	}
@@ -600,6 +600,9 @@ body {
 	text-align: right;
 	padding-top: 30px;
 	padding-bottom: 60px;
+	@include mq($max-width: 991px){
+		font-size: 24px;
+	}
 }
 
 .checkout-policy {

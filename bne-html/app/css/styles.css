@@ -571,8 +571,8 @@ body {
 .view-toggler {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  -ms-flex-pack: center;
+      justify-content: center;
   -ms-flex-align: center;
       align-items: center; }
   .view-toggler span {
@@ -593,7 +593,7 @@ body {
       border: solid 1px rgba(0, 0, 0, 0.15);
       background-color: #ffffff; }
     .view-toggler__btn img {
-      width: 100%;
+      width: 20px;
       display: block; }
 
 .checkout-tabs {
@@ -1088,6 +1088,9 @@ body {
   text-align: right;
   padding-top: 30px;
   padding-bottom: 60px; }
+  @media only screen and (max-width: 991px) {
+    .checkout-amount {
+      font-size: 24px; } }
 
 .checkout-policy {
   text-align: center; }
