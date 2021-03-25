@@ -76,7 +76,8 @@ body {
 			flex-direction: column;
 		}
 	}
-	li {
+	ul li {
+		margin: 0;
 		flex: 0 1 auto;
 		a {
 			padding: 10px 25px 7px;

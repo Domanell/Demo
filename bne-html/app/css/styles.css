@@ -614,10 +614,11 @@ body {
       .checkout-tabs ul {
         -ms-flex-direction: column;
             flex-direction: column; } }
-  .checkout-tabs li {
+  .checkout-tabs ul li {
+    margin: 0;
     -ms-flex: 0 1 auto;
         flex: 0 1 auto; }
-    .checkout-tabs li a {
+    .checkout-tabs ul li a {
       padding: 10px 25px 7px;
       height: 56px;
       display: -ms-flexbox;
@@ -637,13 +638,13 @@ body {
       text-decoration: none;
       transition: all 0.3s; }
       @media only screen and (max-width: 767px) {
-        .checkout-tabs li a {
+        .checkout-tabs ul li a {
           width: 100%;
           border-right: none; } }
-      .checkout-tabs li a:hover {
+      .checkout-tabs ul li a:hover {
         border-bottom-color: #007cf0;
         opacity: 0.85; }
-      .checkout-tabs li a.active {
+      .checkout-tabs ul li a.active {
         border-bottom-color: #007cf0; }
 
 .checkout-tab-title {
