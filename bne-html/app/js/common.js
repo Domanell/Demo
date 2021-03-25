@@ -40,13 +40,14 @@ $(document).ready(function () {
    //	increase and decrease number input  
    $('.input-number a').on('click', function (event) {
       event.preventDefault();
-      let inputNumber = $(this).parent().parent().children('input');
-      if ($(this).hasClass('input-number__plus') && inputNumber.get(0).value >= 0) {
+      let inputNumber = $(this).parent().parent().children('input'),
+           maxValue = inputNumber.attr('max'),
+           minValue = inputNumber.attr('min');
+           getValue = inputNumber.get(0).value;
+      if ($(this).hasClass('input-number__plus') && getValue >= minValue && getValue < maxValue) {
          inputNumber.get(0).value++;
-      } else if ($(this).hasClass('input-number__minus') && inputNumber.get(0).value > 0) {
+      } else if ($(this).hasClass('input-number__minus') && getValue > minValue) {
          inputNumber.get(0).value--;
-      } else {
-         inputNumber.get(0).value = 0;
       }
    });
 });
