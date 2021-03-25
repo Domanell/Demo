@@ -866,7 +866,8 @@ body {
       content: '-';
       padding-right: 3.25px; }
     .checkout-item__accordion-trigger:hover {
-      opacity: 0.85; }
+      opacity: 0.85;
+      text-decoration: none; }
   .checkout-item__accordion {
     display: none;
     padding-top: 15px; }
