@@ -537,7 +537,7 @@ body {
 		width: 15px;
 		position: relative;
 	}
-	button {
+	a {
 		background: #fff;
 		width: 11px;
 		height: 17px;
@@ -555,7 +555,7 @@ body {
 	&__minus {
 		position: absolute;
 		right: 8px;
-		bottom: 2px;
+		bottom: 3px;
 	}
 }
 .checkout-select {

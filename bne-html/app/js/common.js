@@ -38,7 +38,8 @@ $(document).ready(function () {
    });
 
    //	increase and decrease number input  
-   $('.input-number button').on('click', function () {
+   $('.input-number a').on('click', function (event) {
+      event.preventDefault();
       let inputNumber = $(this).parent().parent().children('input');
       if ($(this).hasClass('input-number__plus') && inputNumber.get(0).value >= 0) {
          inputNumber.get(0).value++;
