@@ -897,19 +897,19 @@ body {
         .checkout-form__item label span b {
           font-weight: 400;
           color: #e12323; }
-      .checkout-form__item label input,
-      .checkout-form__item label select {
-        padding: 8px 0;
-        font-family: 'GothamPro', sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        color: #4f5566; }
-        .checkout-form__item label input:focus:-ms-input-placeholder,
-        .checkout-form__item label select:focus:-ms-input-placeholder {
-          color: transparent; }
-        .checkout-form__item label input:focus::placeholder,
-        .checkout-form__item label select:focus::placeholder {
-          color: transparent; }
+    .checkout-form__item input,
+    .checkout-form__item select {
+      padding: 8px 0;
+      font-family: 'GothamPro', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #4f5566; }
+      .checkout-form__item input:focus:-ms-input-placeholder,
+      .checkout-form__item select:focus:-ms-input-placeholder {
+        color: transparent; }
+      .checkout-form__item input:focus::placeholder,
+      .checkout-form__item select:focus::placeholder {
+        color: transparent; }
   .checkout-form__item-checkbox {
     margin-top: -13px;
     margin-bottom: 20px;

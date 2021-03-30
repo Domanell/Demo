@@ -72,7 +72,7 @@ body {
 		flex-wrap: wrap;
 		border-radius: 3px;
 		overflow: hidden;
-		@include mq($max-width: 991px){
+		@include mq($max-width: 991px) {
 			flex-direction: column;
 		}
 	}
@@ -399,16 +399,16 @@ body {
 					color: #e12323;
 				}
 			}
-			input,
-			select {
-				padding: 8px 0;
-				font-family: 'GothamPro', sans-serif;
-				font-size: 18px;
-				font-weight: 500;
-				color: #4f5566;
-				&:focus::placeholder {
-					color: transparent;
-				}
+		}
+		input,
+		select {
+			padding: 8px 0;
+			font-family: 'GothamPro', sans-serif;
+			font-size: 18px;
+			font-weight: 500;
+			color: #4f5566;
+			&:focus::placeholder {
+				color: transparent;
 			}
 		}
 	}
@@ -589,7 +589,7 @@ body {
 	}
 }
 
-.checkout-form-wrapper{
+.checkout-form-wrapper {
 	padding-bottom: 20px;
 }
 
@@ -602,7 +602,7 @@ body {
 	text-align: right;
 	padding-top: 30px;
 	padding-bottom: 60px;
-	@include mq($max-width: 991px){
+	@include mq($max-width: 991px) {
 		font-size: 24px;
 	}
 }
