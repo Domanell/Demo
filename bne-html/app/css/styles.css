@@ -431,7 +431,8 @@ h4,
 h5,
 h6 {
   color: inherit;
-  font-weight: normal; }
+  font-weight: normal;
+  display: block; }
 
 h1 {
   font-size: 42px; }
