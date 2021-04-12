@@ -1210,7 +1210,8 @@ body {
     line-height: 1.3;
     letter-spacing: 0.8px;
     font-weight: 300;
-    color: #898989; }
+    color: #898989;
+    margin-left: 0 !important; }
   .dual-listbox__item--selected {
     background-color: #e31932;
     color: #ffffff; }
