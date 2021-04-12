@@ -786,7 +786,8 @@ body {
       font-weight: 400;
       line-height: 1;
       color: #4f5566;
-      text-align: center; }
+      text-align: center;
+      background-color: transparent; }
     .checkout-item__date img {
       width: 15px;
       height: 15px;
@@ -1130,3 +1131,86 @@ body {
     margin-bottom: 0px; }
   .checkout-form-section .checkout-form {
     padding: 15px 30px 1px; }
+
+.dual-listbox {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  .dual-listbox__container {
+    margin-bottom: 25px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+    @media only screen and (max-width: 767px) {
+      .dual-listbox__container {
+        -ms-flex-direction: column;
+            flex-direction: column; } }
+    .dual-listbox__container > div {
+      width: 100%; }
+  .dual-listbox__search {
+    display: none;
+    border: 1px solid #ddd;
+    padding: 10px;
+    max-width: 300px; }
+  .dual-listbox__available, .dual-listbox__selected {
+    padding: 0;
+    height: 240px;
+    width: 100%;
+    overflow-y: auto;
+    border: 1px solid #e2e2e2;
+    background-color: #fff; }
+  .dual-listbox__buttons {
+    margin: 0 5px;
+    width: auto !important;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    -ms-flex-positive: 0;
+        flex-grow: 0; }
+    @media only screen and (max-width: 767px) {
+      .dual-listbox__buttons {
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0;
+        margin-top: 15px; } }
+  .dual-listbox__button {
+    margin: 10px 0;
+    padding: 3px;
+    display: block;
+    font-size: 18px;
+    background: none;
+    color: #a4a4a4;
+    border: none; }
+    @media only screen and (max-width: 767px) {
+      .dual-listbox__button {
+        margin: 0 5px;
+        font-size: 24px;
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+        font-size: 28px; } }
+  .dual-listbox__title {
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #898989; }
+  .dual-listbox__item {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 13px 22px;
+    font-size: 16px;
+    line-height: 1.3;
+    letter-spacing: 0.8px;
+    font-weight: 300;
+    color: #898989; }
+  .dual-listbox__item--selected {
+    background-color: #e31932;
+    color: #ffffff; }

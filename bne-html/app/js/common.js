@@ -50,6 +50,25 @@ $(document).ready(function () {
          inputNumber.get(0).value--;
       }
    });
+
+   	//multiselect / dual listbox
+	let dualListboxLeft = new DualListbox('.dualListbox-left', {
+		addButtonText: '&#9654',
+		removeButtonText: '&#9664',
+		availableTitle: 'Available',
+		selectedTitle: 'Chosen'
+	});
+	dualListboxLeft.add_all_button.setAttribute('style', 'display: none;');
+	dualListboxLeft.remove_all_button.setAttribute('style', 'display: none;');
+
+	let dualListboxright = new DualListbox('.dualListbox-right', {
+		addButtonText: '&#9654',
+		removeButtonText: '&#9664',
+		availableTitle: 'Available',
+		selectedTitle: 'Chosen'
+	});
+	dualListboxright.add_all_button.setAttribute('style', 'display: none;');
+	dualListboxright.remove_all_button.setAttribute('style', 'display: none;');
 });
 
 //View mode

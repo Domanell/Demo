@@ -267,6 +267,7 @@ body {
 			line-height: 1;
 			color: #4f5566;
 			text-align: center;
+			background-color: transparent;
 		}
 		img {
 			width: 15px;
@@ -650,5 +651,94 @@ body {
 	}
 	.checkout-form {
 		padding: 15px 30px 1px;
+	}
+}
+
+.dual-listbox {
+	display: flex;
+	flex-direction: column;
+	&__container {
+		margin-bottom: 25px;
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
+		@include mq($max-width: 767px) {
+			flex-direction: column;
+		}
+		& > div{
+			width: 100%;
+		}
+	}
+
+	&__search {
+		display: none;
+		border: 1px solid #ddd;
+		padding: 10px;
+		max-width: 300px;
+	}
+
+	&__available,
+	&__selected {
+		padding: 0;
+		height: 240px;
+		width: 100%;
+		overflow-y: auto;
+		border: 1px solid #e2e2e2;
+		background-color: #fff;
+	}
+	
+	&__buttons {
+		margin: 0 5px;
+		width: auto !important;
+		flex-shrink: 0;
+		flex-grow: 0;
+		@include mq($max-width: 767px) {
+			display: flex;
+			margin: 0;
+			margin-top: 15px;
+		}
+	}
+
+	&__button {
+		margin: 10px 0;
+		padding: 3px;
+		display: block;
+		font-size: 18px;
+		background: none;
+		color: #a4a4a4;
+		border: none;
+		@include mq($max-width: 767px) {
+			margin: 0 5px;
+			font-size: 24px;
+			transform: rotate(90deg);
+			font-size: 28px;
+		}
+	}
+
+	&__title {
+		padding-bottom: 5px;
+		font-size: 14px;
+		font-weight: 300;
+		color: #898989;
+	}
+
+	&__item {
+		display: block;
+		cursor: pointer;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		padding: 13px 22px;
+		font-size: 16px;
+		line-height: 1.3;
+		letter-spacing: 0.8px;
+		font-weight: 300;
+		color: #898989;
+	}
+	&__item--selected {
+		background-color: #e31932;
+		color: #ffffff;
 	}
 }
