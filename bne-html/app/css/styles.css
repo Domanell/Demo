@@ -1008,25 +1008,30 @@ body {
       .checkout-form__payment-method a:hover {
         opacity: 0.85;
         border-color: #0882ed; }
-  .checkout-form__submit {
-    margin: 7px auto 50px auto;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    -ms-flex-pack: center;
-        justify-content: center;
-    height: 47px;
-    width: 100%;
-    max-width: 250px;
-    font-family: 'GothamPro', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    color: #ffffff;
-    background-color: #0883ed;
-    border-radius: 21px; }
+
+input[type='submit'].checkout-form__submit {
+  margin: 7px auto 50px auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  height: 47px;
+  width: 100%;
+  max-width: 250px;
+  font-family: 'GothamPro', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  color: #ffffff;
+  background-color: #0883ed;
+  border-radius: 21px;
+  text-decoration: none; }
+  input[type='submit'].checkout-form__submit:hover {
+    text-decoration: none;
+    opacity: 0.85; }
 
 .input-number {
   display: -ms-flexbox;
