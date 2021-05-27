@@ -1,0 +1,477 @@
+<template>
+    <div style="display: none;">{renderTrigger}</div>
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+             aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open c-modal"
+             onmodalwindowclose={closeModal}
+             onmodalsetupspinner={handleEventSetUpSpinner}>
+        <div class="slds-modal__container c-modal__container">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading"></lightning-spinner>
+            </template>
+
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close"
+                        onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close" size="small" variant="inverse"
+                                    alternative-text="Close" title="Close">
+                    </lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 class="slds-modal__title slds-hyphenate slds-text-align_left">
+                    {LABELS.popupHeaderText}</h2>
+            </header>
+
+            <!-- Modal/Popup Box LWC body starts here -->
+            <div class="slds-modal__content slds-p-horizontal_xx-large slds-p-top_x-large">
+
+                <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                    <p class="invoice-number slds-grow">Invoice #  <span>1234567</span></p>
+                    <!-- print button -->
+                    <a class="slds-m-horizontal_medium slds-col_bump-left">
+                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.3633 4.25171H14.8711V2.47192C14.8711 1.10891 13.6883 0 12.2344 0H5.76562C4.31174 0 3.12891 1.10891 3.12891 2.47192V4.25171H2.63672C1.18283 4.25171 0 5.36061 0 6.72363V10.6787C0 12.0417 1.18283 13.1506 2.63672 13.1506H3.12891V15.3918C3.12891 16.2097 3.83861 16.875 4.71094 16.875H13.2891C14.1614 16.875 14.8711 16.2097 14.8711 15.3918V13.1506H15.3633C16.8172 13.1506 18 12.0417 18 10.6787V6.72363C18 5.36061 16.8172 4.25171 15.3633 4.25171ZM4.18359 2.47192C4.18359 1.65411 4.89329 0.98877 5.76562 0.98877H12.2344C13.1067 0.98877 13.8164 1.65411 13.8164 2.47192V4.25171H4.18359V2.47192ZM13.8164 15.3918C13.8164 15.6644 13.5798 15.8862 13.2891 15.8862H4.71094C4.42016 15.8862 4.18359 15.6644 4.18359 15.3918V10.5139H13.8164V15.3918ZM16.9453 10.6787C16.9453 11.4965 16.2356 12.1619 15.3633 12.1619H14.8711V10.5139H15.1875C15.4787 10.5139 15.7148 10.2926 15.7148 10.0195C15.7148 9.7465 15.4787 9.52515 15.1875 9.52515H2.8125C2.52127 9.52515 2.28516 9.7465 2.28516 10.0195C2.28516 10.2926 2.52127 10.5139 2.8125 10.5139H3.12891V12.1619H2.63672C1.76439 12.1619 1.05469 11.4965 1.05469 10.6787V6.72363C1.05469 5.90582 1.76439 5.24048 2.63672 5.24048H15.3633C16.2356 5.24048 16.9453 5.90582 16.9453 6.72363V10.6787Z" fill="#9094A0"></path>
+                            <path d="M10.4062 11.6348H7.59375C7.30252 11.6348 7.06641 11.8561 7.06641 12.1292C7.06641 12.4022 7.30252 12.6235 7.59375 12.6235H10.4062C10.6975 12.6235 10.9336 12.4022 10.9336 12.1292C10.9336 11.8561 10.6975 11.6348 10.4062 11.6348Z" fill="#9094A0"></path>
+                            <path d="M10.4062 13.7441H7.59375C7.30252 13.7441 7.06641 13.9655 7.06641 14.2385C7.06641 14.5116 7.30252 14.7329 7.59375 14.7329H10.4062C10.6975 14.7329 10.9336 14.5116 10.9336 14.2385C10.9336 13.9655 10.6975 13.7441 10.4062 13.7441Z" fill="#9094A0"></path>
+                            <path d="M4.5 6.36133H2.8125C2.52127 6.36133 2.28516 6.58268 2.28516 6.85571C2.28516 7.12875 2.52127 7.3501 2.8125 7.3501H4.5C4.79123 7.3501 5.02734 7.12875 5.02734 6.85571C5.02734 6.58268 4.79123 6.36133 4.5 6.36133Z" fill="#9094A0"></path>
+                        </svg>
+                    </a>
+                    <!-- email button -->
+                    <a class="slds-m-horizontal_medium">
+                        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.5938 0H1.40625C0.630844 0 0 0.630844 0 1.40625V9.55569C0 10.3311 0.630844 10.9619 1.40625 10.9619H14.5938C15.3692 10.9619 16 10.3311 16 9.55569V1.40625C16 0.630844 15.3692 0 14.5938 0ZM14.4102 0.9375L14.2225 1.09378L8.55794 5.81069C8.23462 6.07987 7.76531 6.07987 7.44206 5.81069L1.77747 1.09378L1.58978 0.9375H14.4102ZM0.9375 1.61431L5.55288 5.45753L0.9375 8.52919V1.61431ZM14.5938 10.0244H1.40625C1.17975 10.0244 0.990313 9.86294 0.946906 9.64909L6.30456 6.08344L6.84219 6.53112C7.17762 6.81044 7.58884 6.95009 8.00003 6.95009C8.41122 6.95009 8.82241 6.81044 9.15788 6.53112L9.6955 6.08344L15.0531 9.64906C15.0097 9.86297 14.8202 10.0244 14.5938 10.0244ZM15.0625 8.52919L10.4471 5.45756L15.0625 1.61431V8.52919Z" fill="#9094A0"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!--  POS SECTION  -->
+                <div class="slds-p-bottom_small">
+                    <!-- order #1 -->
+                    <div class="shadow-box slds-m-bottom_x-large" style="padding-bottom: 1px;">
+                        <table class="slds-table slds-table_cell-buffer slds-table_fixed-layout slds-no-row-hover c-table">
+                            <thead class="c-table__head">
+                                <tr>
+                                    <th style="width: 15%">
+                                        <div class="slds-truncate">POS Order #</div>
+                                    </th>
+                                    <th style="width: 20%">
+                                        <div class="slds-truncate">Guest</div>
+                                    </th>
+                                    <th style="width: 12%">
+                                        <div class="slds-truncate">Room #</div>
+                                    </th>
+                                    <th>
+                                        <div class="slds-truncate">Date</div>
+                                    </th>
+                                    <th>
+                                        <div class="slds-truncate">Time</div>
+                                    </th>
+                                    <th>
+                                        <div class="slds-truncate">Price</div>
+                                    </th>
+                                    <th>
+                                        <div class="slds-truncate">Status</div>
+                                    </th>
+                                    <th style="width: 6%">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="c-table__body">
+                                <tr>
+                                    <td style="width: 15%">
+                                        <div class="slds-truncate">12345</div>
+                                    </td>
+                                    <td style="width: 20%">
+                                        <div class="slds-truncate">David Harroch</div>
+                                    </td>
+                                    <td style="width: 12%">
+                                        <div class="slds-truncate">123</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">10/06/2021</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">06:45 PM</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">$127.45</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate text-color__gray">Not Paid</div>
+                                    </td>
+                                    <td style="width: 6%">
+                                        <lightning-icon 
+                                            icon-name="utility:close"  
+                                            size="x-small"
+                                            alternative-text="Delete" 
+                                            title="Delete"
+                                            class="c-table-button__delete">
+                                        </lightning-icon>   
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button class="slds-button c-button c-button__empty-blue slds-align_absolute-center slds-m-bottom_large">View Order List</button>
+                    </div>
+
+                    <!-- order #2 -->
+                    <div class="shadow-box slds-m-bottom_x-large" style="padding-bottom: 1px;">
+                        <table class="slds-table slds-table_cell-buffer slds-table_fixed-layout slds-no-row-hover c-table">
+                            <!-- without thead -->
+                            <tbody class="c-table__body">
+                                <tr>
+                                    <td style="width: 15%">
+                                        <div class="slds-truncate">12346</div>
+                                    </td>
+                                    <td style="width: 20%">
+                                        <div class="slds-truncate">David Harroch</div>
+                                    </td>
+                                    <td style="width: 12%">
+                                        <div class="slds-truncate">123</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">10/06/2021</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">06:45 PM</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">$127.45</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate text-color__gray">Not Paid</div>
+                                    </td>
+                                    <td style="width: 6%">
+                                        <lightning-icon 
+                                            icon-name="utility:close"  
+                                            size="x-small"
+                                            alternative-text="Delete" 
+                                            title="Delete"
+                                            class="c-table-button__delete">
+                                        </lightning-icon>   
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <button class="slds-button c-button c-button__empty-blue slds-align_absolute-center slds-m-bottom_large">View Order List</button>
+                    </div>
+                </div>
+
+                <!--  GUESTS SECTION  -->
+                <div class="slds-p-bottom_x-small slds-grid slds-grid_align-center">
+                    <div class="slds-size_1-of-1 slds-medium-size_7-of-12">
+                        <table class="slds-table slds-table_cell-buffer slds-table_fixed-layout slds-no-row-hover
+                                        c-table__large-space shadow-box">
+                            <thead class="c-table__head">
+                                <tr>
+                                    <th style="width: 3.5rem">
+                                    </th>
+                                    <th style="width: 40%">
+                                        Guests
+                                    </th>
+                                    <th class="slds-text-align_center">
+                                       # of Guest
+                                    </th>
+                                    <th>
+                                        Amount
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="c-table__body">
+                                <tr>
+                                    <td>
+                                        <lightning-input type="checkbox" class="c-checkbox" label="" value=""></lightning-input>
+                                    </td>
+                                    <td>
+                                        <input 
+                                            type="text" 
+                                            class="slds-input c-input-item c-border"
+                                            placeholder="David Harroch"
+                                            readonly=""
+                                        />
+                                    </td>
+                                    <td class="slds-text-align_center">
+                                        <div class="slds-truncate">2</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">
+                                            <input type="text" placeholder="$450" class="slds-input c-input-item c-border slds-text-align_center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <lightning-input type="checkbox" class="c-checkbox" label="" value=""></lightning-input>
+                                    </td>
+                                    <td>
+                                        <input 
+                                            type="text" 
+                                            class="slds-input c-input-item c-border"
+                                            placeholder="Laura Mitchell"
+                                            readonly=""
+                                        />
+                                    </td>
+                                    <td class="slds-text-align_center">
+                                        <div class="slds-truncate">2</div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">
+                                            <input type="text" placeholder="$450" class="slds-input c-input-item c-border slds-text-align_center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right ">
+                                            <lightning-icon 
+                                                icon-name="standard:contact"  
+                                                size="small"
+                                                alternative-text="Guest" 
+                                                title="Guest"
+                                                class="c-input-icon__right">
+                                            </lightning-icon>
+                                            <input 
+                                                type="text" 
+                                                class="slds-input c-input-item c-border c-input-item__color-gray"
+                                                placeholder="Add Guest"
+                                                readonly=""
+                                            />
+                                        </div>
+                                    </td>
+                                    <td class="slds-text-align_center">
+                                        <div class="slds-truncate"></div>
+                                    </td>
+                                    <td>
+                                        <div class="slds-truncate">
+                                            <input type="text" placeholder="" class="slds-input c-input-item c-border slds-text-align_center" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="slds-p-top_large slds-m-bottom_x-large">
+                            <lightning-input type="checkbox" class="c-checkbox slds-m-left_xx-large" label="Split the Bill" value=""></lightning-input>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  SUMMARY SECTION  -->
+                <template if:true={itemsTableRecords}>
+                    <div class="slds-p-bottom_xx-large slds-grid slds-grid--align-center">
+                        <div class="slds-size_1-of-1 slds-medium-size_7-of-12">
+                            <table class="slds-table slds-table_cell-buffer slds-table_fixed-layout slds-no-row-hover
+                                            c-table__large-space shadow-box">
+                                <thead class="c-table__head">
+                                    <tr>
+                                        <th>
+                                            <div class="slds-truncate">
+                                                {LABELS.subTotal}
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="slds-truncate">
+                                                {LABELS.discount}
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="slds-truncate">
+                                                {LABELS.tax}
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div class="slds-truncate">
+                                                {LABELS.grandTotal}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="c-table__body">
+                                    <tr>
+                                        <td>
+                                            <div class="slds-truncate">{subTotal}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{discount}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{tax}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{grandTotal}</div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- BUTTONS -->
+                <div class="slds-m-bottom_xx-large slds-grid slds-grid_align-center">
+                    <div class="slds-size_1-of-1 slds-medium-size_6-of-12">
+                        <div class="slds-grid slds-wrap slds-grid_align-spread">
+                            <button class="slds-button c-button c-button__empty">Delete</button>
+                            <button class="slds-button c-button c-button__blue">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- OLD Modal/Popup Box LWC body starts here -->
+            <!-- <div class="slds-modal__content slds-p-top_x-large">
+                <lightning-layout multiple-rows class="booking-ninjas-brand-body-background">
+                    <lightning-layout-item size="12" class="slds-p-around_medium"> -->
+                        <!--  MAIN SECTION  -->
+                        <!-- <div class="card-container booking-ninjas-card-no-padding">
+                            <div>
+                                <div class="slds-grid_vertical">
+                                    <div class="font-main-title">{LABELS.items}</div>
+                                    <div class="slds-scrollable_y" style="height:13em">
+                                        <c-custom-data-table if:true={itemsTableRecords}
+                                                                class="item-table"
+                                                                columns={tableItemsColumns}
+                                                                records={itemsTableRecords}>
+                                        </c-custom-data-table>
+                                    </div>
+                                    <div class="slds-p-top_medium slds-p-bottom-small">
+                                        <div class="slds-grid slds-grid_vertical-align-center booking-ninjas-blue-color">
+                                            <div class="slds-text-link_reset plus alt"
+                                                    onclick={handleAddAddonServices}></div>
+                                            <div class="slds-text-link_reset"
+                                                    onclick={handleAddAddonServices}>{LABELS.addAddonButton}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+
+                    <div class="slds-grid slds-grow slds-p-bottom_small">
+                        <div class="slds-col slds-size_8-of-12 slds-p-horizontal_medium"> -->
+
+                            <!--  GUESTS SECTION  -->
+                            <!-- <div class="card-container">
+                                <div style="">
+                                    <div class="slds-grid_vertical">
+                                        <div>{LABELS.paymentOptions}</div>
+                                        <div>
+                                            <lightning-combobox
+                                                    class="slds-size_1-of-2 booking-ninjas-underscored-input payment-options"
+                                                    label={LABELS.paymentOptions}
+                                                    placeholder=""
+                                                    variant="label-hidden"
+                                                    options={paymentOptions}
+                                                    onchange={handleChangePaymentOptions}>
+                                            </lightning-combobox>
+                                        </div>
+                                        <div class="slds-p-top_small slds-text-body_small slds-text-color_weak">
+                                            {LABELS.guestTableHint}
+                                        </div>
+                                        <div class="slds-p-horizontal_medium slds-scrollable_y"
+                                                style="height:9em">
+                                            <c-custom-data-table if:true={itemsGuestRecords}
+                                                                    class="guest-table"
+                                                                    columns={tableGuestColumns}
+                                                                    records={itemsGuestRecords}>
+                                            </c-custom-data-table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_4-of-12 slds-p-right_medium"> -->
+
+                            <!--  SUMMARY SECTION  -->
+                            <!-- <div class="card-container">
+                                <div style="">
+                                    <lightning-layout multiple-rows if:true={itemsTableRecords}>
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-title"
+                                                                padding="horizontal-small">{LABELS.subTotal}
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-title"
+                                                                padding="horizontal-small">
+                                            <lightning-formatted-number class="slds-truncate"
+                                                                        value={subTotal}
+                                                                        format-style="currency"
+                                                                        currency-code="USD"></lightning-formatted-number>
+                                        </lightning-layout-item>
+
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-title"
+                                                                padding="horizontal-small">{LABELS.discount}
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-title"
+                                                                padding="horizontal-small">
+                                            <lightning-formatted-number class="slds-truncate"
+                                                                        value={discount}
+                                                                        format-style="currency"
+                                                                        currency-code="USD"></lightning-formatted-number>
+                                        </lightning-layout-item>
+
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-title"
+                                                                padding="horizontal-small">{LABELS.tax}
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-title"
+                                                                padding="horizontal-small">
+                                            <lightning-formatted-number class="slds-truncate" value={tax}
+                                                                        format-style="currency"
+                                                                        currency-code="USD"></lightning-formatted-number>
+                                        </lightning-layout-item>
+
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-main-title"
+                                                                padding="horizontal-small">
+                                            {LABELS.grandTotal}
+                                        </lightning-layout-item>
+                                        <lightning-layout-item size="6"
+                                                                class="slds-p-vertical_x-small font-main-title"
+                                                                padding="horizontal-small">
+                                            <lightning-formatted-number class="slds-truncate"
+                                                                        value={grandTotal}
+                                                                        format-style="currency"
+                                                                        currency-code="USD"></lightning-formatted-number>
+                                        </lightning-layout-item>
+                                    </lightning-layout>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </lightning-layout>
+            </div> -->
+
+            <!-- Modal/Popup Box LWC footer starts here -->
+            <!-- <footer class="slds-modal__footer booking-ninjas-brand-body-background">
+                <button class="slds-button booking-ninjas-button booking-ninjas-button_neutral"
+                        onclick={handleResetAll} title={LABELS.resetAll}>
+                    {LABELS.resetAll}
+                </button>
+                <button class="slds-button booking-ninjas-button booking-ninjas-button_neutral"
+                        onclick={closeModal} title={LABELS.cancel}>
+                    {LABELS.cancel}
+                </button>
+
+                <button class="slds-button booking-ninjas-button booking-ninjas-button_brand"
+                        onclick={handleSaveInvoices} title={LABELS.save}>
+                    {LABELS.save}
+                </button>
+            </footer> -->
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open c-modal-backdrop"></div>
+</template>
